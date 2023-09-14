@@ -1,7 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import Header from "./components/Hearder";
-import ResturentCard from "./components/Restaurant";
 import Body from "./components/Body";
 
 const AppLayout = () => {
