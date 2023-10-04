@@ -94,3 +94,33 @@
   background-size: 200% 100%;
   animation: shimmer 1.5s infinite;
 }
+
+.login-btn {
+  /* Background color */
+  background-color: #f87171;
+
+  /* Text color */
+  color: #fff;
+
+  /* Padding */
+  padding: 10px 20px;
+
+  /* Border radius for rounded corners */
+  border-radius: 5px;
+
+  /* Cursor style on hover */
+  cursor: pointer;
+
+  /* Hover effect */
+  transition: background-color 0.3s ease-in-out;
+
+  /* Optional: Remove default button styles */
+  border: none;
+  outline: none;
+  text-decoration: none;
+}
+
+.login-btn:hover {
+  /* Change background color on hover */
+  background-color: #0056b3;
+}
