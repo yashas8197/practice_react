@@ -6,6 +6,10 @@ import { LIVE_API } from "../../utils/Constant";
 const Body = () => {
   const [listOfRestaurants, setListOfReastaurants] = useState([]);
 
+  const [filteredRestaurants, setFilteredRestaurants] = useState([]);
+
+  const [searchText, setSearchText] = useState("");
+
   useEffect(() => {
     fetchData();
   }, []);
@@ -16,6 +20,9 @@ const Body = () => {
     setListOfReastaurants(
       json.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
+    setFilteredRestaurants(
+      json.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+    );
     console.log(json);
   };
 
@@ -24,6 +31,26 @@ const Body = () => {
   ) : (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input
+            className="search-box"
+            type="text"
+            value={searchText}
+            onChange={(e) => {
+              setSearchText(e.target.value);
+            }}
+          />
+          <button
+            onClick={() => {
+              const filteredList = listOfRestaurants.filter((res) =>
+                res.info.name.toLowerCase().includes(searchText.toLowerCase())
+              );
+              setFilteredRestaurants(filteredList);
+            }}
+          >
+            Search
+          </button>
+        </div>
         <button
           className="filter-btn"
           onClick={() => {
@@ -37,7 +64,7 @@ const Body = () => {
         </button>
       </div>
       <div className="res-container">
-        {listOfRestaurants.map((restaurant) => (
+        {filteredRestaurants.map((restaurant) => (
           <ResturentCard key={restaurant.info.id} resData={restaurant} />
         ))}
       </div>
