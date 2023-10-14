@@ -18,10 +18,10 @@ const Body = () => {
     const data = await fetch(LIVE_API);
     const json = await data.json();
     setListOfReastaurants(
-      json.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     setFilteredRestaurants(
-      json.data?.cards[5]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      json.data?.cards[2]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
     console.log(json);
   };
@@ -57,7 +57,7 @@ const Body = () => {
             const filteredList = listOfRestaurants.filter(
               (res) => res.info.avgRating > 4
             );
-            setListOfReastaurants(filteredList);
+            setFilteredRestaurants(filteredList);
           }}
         >
           Top Rated Restaurants
