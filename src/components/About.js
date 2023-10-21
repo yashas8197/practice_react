@@ -1,9 +1,17 @@
-const About = () => {
-  return (
-    <div>
-      <h1>Its a About page</h1>
-    </div>
-  );
-};
+import { Component } from "react";
+import UserClass from "./UserInfoClass";
+class AboutClass extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-export default About;
+  render() {
+    return (
+      <div>
+        <UserClass />
+      </div>
+    );
+  }
+}
+
+export default AboutClass;
