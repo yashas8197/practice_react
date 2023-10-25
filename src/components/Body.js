@@ -70,7 +70,6 @@ const Body = () => {
             to={"restaurants/" + restaurant.info.id}
             key={restaurant.info.id}
           >
-            {console.log(restaurant.info.id)}
             <ResturentCard resData={restaurant} />
           </Link>
         ))}
